@@ -1,0 +1,12 @@
+{
+  "name": "playwright-framework",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "dotenv": "^17.4.2"
+  }
+}
