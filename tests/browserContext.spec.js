@@ -4,10 +4,10 @@ test('browser context', async () => {
 
     const browser = await chromium.launch();
     const context1 = await browser.newContext();
-  //  const context2 = await browser.newContext();
+    const context2 = await browser.newContext();
 
     const page1 = await context1.newPage();
-  //  const page2 = await context2.newPage();
+    const page2 = await context2.newPage();
 
     await page1.goto("https://www.saucedemo.com/");
     await page1.fill("#user-name", "standard_user");
@@ -17,11 +17,11 @@ test('browser context', async () => {
 
     // commented for scm trigger in hcm
 
-  //  await page2.goto("https://www.saucedemo.com/");
-    //await page2.fill("#user-name", "locked_out_user");
-    //await page2.fill("#password", "secret_sauce");
-    //await page2.click("#login-button");
-    //await expect(page2).toHaveTitle('Swag Labs');
+    await page2.goto("https://www.saucedemo.com/"); // removed slashes
+    await page2.fill("#user-name", "locked_out_user");
+    await page2.fill("#password", "secret_sauce");
+    await page2.click("#login-button");
+    await expect(page2).toHaveTitle('Swag Labs');
 
 });
 
