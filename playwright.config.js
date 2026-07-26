@@ -8,27 +8,29 @@ module.exports = defineConfig({
   expect: {
     timeout: 5000,
   },
+  fullyParallel : true,
   reporter: [
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
   ],
   use: {
     // ✅ Read baseURL from .env, or fall back to Saucedemo
-    baseURL: process.env.BASE_URL || 'https://www.saucedemo.com/',
 
     headless: false,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 0,
     ignoreHTTPSErrors: true,
-    trace: 'on-first-retry',
+    trace: 'on',
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
+    storageState: "test_data/Auth.json",
   },
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
+    
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
@@ -38,4 +40,5 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
   ],
+  
 });
