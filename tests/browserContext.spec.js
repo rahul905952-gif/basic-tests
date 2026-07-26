@@ -39,7 +39,7 @@ test('new page handle in context', async () => {
         page.getByText("merrymoonmary").click()
     ]);
 
-   await newPage.waitForLoadState('networkidle');
+   await newPage.waitForLoadState('load');
    // console.log("New page URL:", newPage.url());
     await browser.close();
 });
@@ -52,6 +52,8 @@ test('download', async({page})=>{
     const [download] = await Promise.all([
         page.waitForEvent('download'), page.locator('#txtDownloadLink').click()
     ]);
+       await download.waitForLoadState('networkidle');
+
     
 });
   

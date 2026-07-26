@@ -12,6 +12,7 @@ module.exports = defineConfig({
   reporter: [
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
+
   ],
   use: {
     // ✅ Read baseURL from .env, or fall back to Saucedemo
