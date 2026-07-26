@@ -26,7 +26,6 @@ test('browser context', async () => {
 
 
 test('new page handle in context', async () => {
-    test.setTimeout(60000);
     const browser = await chromium.launch();
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -40,10 +39,10 @@ test('new page handle in context', async () => {
         page.getByText("merrymoonmary").click()
     ]);
 
-    await newPage.waitForLoadState('domcontentloaded');
+    await newPage.waitForLoadState('domcontentloaded', {timeout : 60000});
 
     // Verify page title
-    await expect(newPage).toHaveTitle(/merrymoonmary Stock Image/);
+    await expect(newPage).toHaveTitle(/merrymoonmary Stock Image/, {timeout : 60000});
     //await newPage.waitForLoadState();
     // console.log("New page URL:", newPage.url());
     await browser.close();

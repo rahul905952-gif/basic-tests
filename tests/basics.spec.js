@@ -1,12 +1,13 @@
 const {test, expect,chromium} = require('@playwright/test');
 
+test.setTimeout(60000);
 
 test('basics' , async({page})=>{
 await page.goto("https://practice-automation.com/");
 //await expect(page).toHaveTitle("Learn and Practice Automation | automateNow");
 await expect(page).toHaveURL("https://practice-automation.com/");
 
-// filling formss
+// filling formssy
 
 await page.getByRole("link", {name:"Form Fields"}).click();
 await page.waitForLoadState('networkidle');
