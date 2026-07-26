@@ -52,9 +52,6 @@ test('download', async({page})=>{
     const [download] = await Promise.all([
         page.waitForEvent('download'), page.locator('#txtDownloadLink').click()
     ]);
-       await download.waitForLoadState('networkidle');
-
-    
 });
   
 
