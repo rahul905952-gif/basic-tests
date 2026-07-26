@@ -49,6 +49,7 @@ test('new page handle in context', async () => {
 });
 
 test('download', async ({ page }) => {
+    test.setTimeout('60000');
     await page.goto("https://testautomationpractice.blogspot.com/p/download-files_25.html");
     await page.getByLabel('Enter Text:').fill('test');
     await page.locator('#generateTxt').click();
