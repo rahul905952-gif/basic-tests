@@ -5,7 +5,7 @@ test('debugging with playwright' , async({page})=>{
     await page.goto("https://www.saucedemo.com/");
     await page.locator("#user-name").fill("problem_user");
     await page.locator("#password").fill("secret_sauce");
-    await page.locator("..login-button").click();
+    await page.locator("#login-button").click();
 
     // we can configure trace = on , so that once the test fails
     // npx playwright show-report open and see the ss, video, trace zip

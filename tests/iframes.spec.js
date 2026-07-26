@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test('handle iframesr', async({page})=>{
+test('handle iframes', async({page})=>{
 
 //    "Yes — I mainly use page.frameLocator() because it auto-waits for the iframe and the element inside it to be ready, unlike page.frame() which doesn't wait and can return null if the iframe hasn't loaded yet. That reliability is why it's Playwright's recommended approach."
 
