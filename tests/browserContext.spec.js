@@ -39,7 +39,7 @@ test('new page handle in context', async () => {
         page.getByText("merrymoonmary").click()
     ]);
 
-   await newPage.waitForLoadState('load');
+   await newPage.waitForLoadState('domcontentloaded');
    // console.log("New page URL:", newPage.url());
     await browser.close();
 });
