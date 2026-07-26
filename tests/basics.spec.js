@@ -43,3 +43,12 @@ test('with fixture', async({})=>{
     await page.goto("https://google.com");
 
 });
+
+test('new pop handle in context', async () => {
+    const browser = await chromium.launch();
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto("https://practice-automation.com/");
+    await page.getByText("Popups").click();
+
+});
